@@ -40,18 +40,18 @@ python websocket_easy_ocr.py
 
 ### Control
 - Image Input
--- Drag and drop
--- Using File dialog (top input element)
+    - Drag and drop
+    - Using File dialog (top input element)
 - Image Frame
--- left mouse & touch drag - panning
--- mouse wheel & pinch to zoom - zoom in / out
--- mouse doubleclick - change reference image for diff
--- right mouse drag - adjust brightness and contrast
+    - left mouse & touch drag - panning
+    - mouse wheel & pinch to zoom - zoom in / out
+    - mouse doubleclick - change reference image for diff
+    - right mouse drag - adjust brightness and contrast
 
 - Result Frame
--- You can search for the text you want. Only the searched text is displayed above the image.
--- Hover over the text badge to see the probability.
--- When you click a text badge, the clicked text is highlighted and displayed above the image.
+    - You can search for the text you want. Only the searched text is displayed above the image.
+    - Hover over the text badge to see the probability.
+    - When you click a text badge, the clicked text is highlighted and displayed above the image.
 
 ### options
 - Modify the code below to change the color.
