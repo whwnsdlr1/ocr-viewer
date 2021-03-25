@@ -16,27 +16,27 @@ yarn run serve
 and access to http://localhost:port
 
 ### Demo (own OCR)
-- Implement your own recognizeImpl function of ocr-viewer> src> js> recognize.js. See the comment of the function.
-- input the image in the web app(http://localhost:port)
+1. Implement your own recognizeImpl function in ocr-viewer> src> js> recognize.js. See the comment of the function.
+2. Input the image in the web app(http://localhost:port)
 
 ### Demo (PaddleOCR)
-- run websocket server
+1. Install python packages and Run websocket server
 ```
 cd backend_example
 pip install -r requirements_paddle_ocr.txt
 python websocket_paddle_ocr.py
 ```
-- input the image in the web app(http://localhost:port)
+2. Input the image in the web app(http://localhost:port)
 
 ### Demo (EasyOCR)
-- install pytorch
-- run websocket server
+1. Install pytorch
+2. Install python packages and Run websocket server
 ```
 cd backend_example
 pip install -r requirements_easy_ocr.txt
 python websocket_easy_ocr.py
 ```
-- input the image in the web app(http://localhost:port)
+3. Input the image in the web app(http://localhost:port)
 
 ### Control
 - Image Input
@@ -45,9 +45,7 @@ python websocket_easy_ocr.py
 - Image Frame
     - left mouse & touch drag - panning
     - mouse wheel & pinch to zoom - zoom in / out
-    - mouse doubleclick - change reference image for diff
     - right mouse drag - adjust brightness and contrast
-
 - Result Frame
     - You can search for the text you want. Only the searched text is displayed above the image.
     - Hover over the text badge to see the probability.
