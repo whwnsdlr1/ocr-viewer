@@ -20,6 +20,7 @@ and access to http://localhost:port
 2. Input the image in the web app(http://localhost:port)
 
 ### Demo (PaddleOCR)
+- https://github.com/PaddlePaddle/PaddleOCR
 1. Install python packages and Run websocket server
 ```
 cd backend_example
@@ -29,6 +30,7 @@ python websocket_paddle_ocr.py
 2. Input the image in the web app(http://localhost:port)
 
 ### Demo (EasyOCR)
+- https://github.com/JaidedAI/EasyOCR
 1. Install pytorch
 2. Install python packages and Run websocket server
 ```
@@ -52,7 +54,7 @@ python websocket_easy_ocr.py
     - When you click a text badge, the clicked text is highlighted and displayed above the image.
 
 ### options
-- Modify the code below to change the color.
+- Modify the code below to change the box color.
 ```js
 // ocr-viewer > src > components > Frame.vue
 <script>
