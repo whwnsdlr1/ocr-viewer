@@ -28,6 +28,7 @@ pip install -r requirements_paddle_ocr.txt
 python websocket_paddle_ocr.py
 ```
 2. Input the image in the web app(http://localhost:port)
+> you can change language in 'websocket_paddle_ocr.py'. default is English
 
 ### Demo (EasyOCR)
 - https://github.com/JaidedAI/EasyOCR
@@ -39,6 +40,7 @@ pip install -r requirements_easy_ocr.txt
 python websocket_easy_ocr.py
 ```
 3. Input the image in the web app(http://localhost:port)
+> you can change language in 'websocket_easy_ocr.py'. default is English
 
 ### Control
 - Image Input

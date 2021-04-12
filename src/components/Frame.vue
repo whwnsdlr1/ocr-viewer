@@ -186,6 +186,39 @@ export default {
         mouseRightDownHandler()
       }
     },
+    listen__view__on_x_move: function (e) {
+      const Vue = this
+      if (Vue.loaded == false)
+        return
+      
+      if (Vue.state.coord == undefined) return
+
+      if (this.$store.state.frameData.pred.length == 0) return
+
+      e.preventDefault()
+      // console.log(this.$cornerstone.pixelToCanvas(this.$el, {x: e.pageX, y: e.pageY}));
+      // console.log(this.$store.state.frameData.pred);
+      let pt = this.$cornerstone.canvasToPixel(this.$el, {x: e.offsetX, y: e.offsetY})
+      // console.log(pt)
+      let ids = new Array(this.$store.state.frameData.pred.length);
+      let tests = new Array(this.$store.state.frameData.pred.length).fill(false);
+      for (let i in this.$store.state.frameData.pred) {
+        let row = this.$store.state.frameData.pred[i]
+        ids[i] = row.id;
+        if (Vue.testPolygon(pt, row.points) == true)
+          tests[i] = true;
+      }
+
+      if (tests.reduce((acc, cur) => cur || acc)) {
+        for (let i in tests) {
+          if (tests[i] == true)
+            this.$store.commit('frameDataPred', {id: ids[i], key: 'highlight', value: true});
+          else
+            this.$store.commit('frameDataPred', {id: ids[i], key: 'highlight', value: false});
+        }
+        this.$store.commit('updateTagging');
+      }
+    },
     listen__view__onwheel: function (e) {      
       const Vue = this
       if (Vue.loaded == false)
@@ -253,6 +286,23 @@ export default {
         }
         this.$cornerstone.updateImage(this.$el);
       }
+    },
+    testPolygon: function (point, vs) {
+        // ray-casting algorithm based on
+        // https://wrf.ecse.rpi.edu/Research/Short_Notes/pnpoly.html/pnpoly.html
+        
+        var x = point.x, y = point.y;
+        
+        var inside = false;
+        for (var i = 0, j = vs.length - 1; i < vs.length; j = i++) {
+            var xi = vs[i].x, yi = vs[i].y;
+            var xj = vs[j].x, yj = vs[j].y;
+            var intersect = ((yi > y) != (yj > y))
+                && (x < (xj - xi) * (y - yi) / (yj - yi) + xi);
+            if (intersect) inside = !inside;
+        }
+        
+        return inside;
     }
   },
   computed: {

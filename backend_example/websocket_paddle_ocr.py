@@ -8,7 +8,7 @@ port = 8999
 
 if __name__ == '__main__':
   print('initailize PaddleOCR')
-  ocr = PaddleOCR(lang = 'korean', use_gpu = False)
+  ocr = PaddleOCR(lang = 'en', use_gpu = False)
 
   async def accept(websocket, path):
     data = await websocket.recv()

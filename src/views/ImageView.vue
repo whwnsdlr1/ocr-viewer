@@ -2,6 +2,7 @@
 <div class="image-view"
     @touchstart="listen__view__on_x_down($event, 'touch')"
     @mousedown="listen__view__on_x_down($event, 'mouse')"
+    @mousemove="listen__view__on_x_move($event, 'mouse')"
     @wheel="listen__view__onwheel">
   <frame
           ref="frame"
@@ -41,6 +42,9 @@ export default {
     },
     listen__view__onwheel: function (e) {
       this.$refs['frame'].listen__view__onwheel(e);
+    },
+    listen__view__on_x_move: function (e, type) {
+      this.$refs['frame'].listen__view__on_x_move(e, type);
     }
   }
 }

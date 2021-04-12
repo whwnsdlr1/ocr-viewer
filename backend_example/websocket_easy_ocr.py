@@ -8,7 +8,7 @@ port = 8999
 
 if __name__ == '__main__':
   print('initailize EasyOCR')
-  reader = easyocr.Reader(['en', 'ko'])
+  reader = easyocr.Reader(['en'])
 
   async def accept(websocket, path):
     data = await websocket.recv()
