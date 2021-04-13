@@ -5,7 +5,7 @@
 Web application for easy and convenient viewing of OCR results.
 <br />
 You can easily open the image (drag and drop) and draw a text area on the image in real time (in the browser) so you can select and view only the text area you want.
-
+> Demo using stub data - https://whwnsdlr1.github.io/ocr-viewer/
 ### install
 ```
 git clone https://github.com/whwnsdlr1/ocr-viewer
