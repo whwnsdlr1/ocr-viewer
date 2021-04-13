@@ -209,15 +209,13 @@ export default {
           tests[i] = true;
       }
 
-      if (tests.reduce((acc, cur) => cur || acc)) {
-        for (let i in tests) {
-          if (tests[i] == true)
-            this.$store.commit('frameDataPred', {id: ids[i], key: 'highlight', value: true});
-          else
-            this.$store.commit('frameDataPred', {id: ids[i], key: 'highlight', value: false});
-        }
-        this.$store.commit('updateTagging');
+      for (let i in tests) {
+        if (tests[i] == true)
+          this.$store.commit('frameDataPred', {id: ids[i], key: 'highlight', value: true});
+        else
+          this.$store.commit('frameDataPred', {id: ids[i], key: 'highlight', value: false});
       }
+      this.$store.commit('updateTagging');
     },
     listen__view__onwheel: function (e) {      
       const Vue = this
